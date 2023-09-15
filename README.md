@@ -44,7 +44,7 @@ python scripts/prepare_data.py
 An example command to start a training session:
 
 ```
-python scripts/run_experiment.py trainer.gpus=1 data.batch_size=32
+python scripts/run_experiment.py
 ```
 
 Configurations can be modified in `conf/config.yaml` or in command line. See [Hydra's documentation](https://hydra.cc/docs/intro) to learn more.
@@ -60,27 +60,3 @@ python scripts/download_checkpoint.py RUN_PATH
 Replace RUN_PATH with the path of your run. The run path should be in the format of `<entity>/<project>/<run_id>`. To find the run path for a particular experiment run, go to the Overview tab in the dashboard.
 
 The checkpoint will be downloaded to a folder named `artifacts` under the project directory.
-
-### Deployment
-
-An API is created to make predictions using the trained model. Use the following command to get the server up and running:
-
-```
-make api
-```
-
-You can explore the API via the generated documentation at http://0.0.0.0:8000/docs.
-
-To run the Streamlit app, create a new terminal window and use the following command:
-
-```
-make streamlit
-```
-
-The app should be opened in your browser automatically. You can also open it by visiting [http://localhost:8501](http://localhost:8501). For the app to work, you need to download the artifacts of an experiment run (see above) and have the API up and running.
-
-To create a Docker image for the API:
-
-```
-make docker
-```
