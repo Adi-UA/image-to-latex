@@ -44,6 +44,9 @@ def download_file(url):
         print(f"Extracting: {file_name}")
         with tarfile.open(file_name, "r:gz") as tar:
             tar.extractall(path=download_dir)
+            os.rename(
+                os.path.join(download_dir, "formula_images_processed"), os.path.join(download_dir, "formula_images")
+            )
         print(f"Extracted: {file_name}")
 
 
