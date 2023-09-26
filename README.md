@@ -1,11 +1,11 @@
 # Image to LaTeX
 
-An application that maps an image of a LaTeX math equation to LaTeX code. This is a fork that works exactly like the original, but is updated to support Python 3.10 and the new setuptools rules. It also fixes a minor bug where Makefiles don't support source with `/bin/sh`, so I explicitly set its shell to bash. These changes fixe [a longstanding issue on the original repo](https://github.com/kingyiusuen/image-to-latex/issues/20).
-
+An application that maps an image of a LaTeX math equation to LaTeX code. This is a fork that works exactly like the original, but is updated to support Python <=3.10 and the new setuptools rules. It also fixes a minor bug where Makefiles don't support source with `/bin/sh`, so I explicitly set its shell to bash. These changes fixe [a longstanding issue on the original repo](https://github.com/kingyiusuen/image-to-latex/issues/20).
 
 I will a link to my own best run for this model in the future along with the BLEU score metric.
 
 ## How To Use
+
 ### Setup
 
 Clone the repository to your computer and position your command line inside the repository folder:
