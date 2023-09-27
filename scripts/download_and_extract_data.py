@@ -24,30 +24,30 @@ os.makedirs(download_dir, exist_ok=True)
 
 # Function to download a single file using wget
 def download_file(url):
-    file_name = os.path.join(download_dir, url.split("/")[-1])
+    filename = os.path.join(download_dir, url.split("/")[-1])
 
     # Check if the file already exists; if yes, skip downloading
-    if os.path.exists(file_name):
-        print(f"File already exists, skipping download: {file_name}")
+    if os.path.exists(filename) and os.path.getsize(filename) > 0:
+        print(f"File already exists, skipping download: {filename}")
         return
 
     try:
         # Use subprocess to call wget to download the file
-        subprocess.run(["wget", url, "-O", file_name], check=True)
+        subprocess.run(["wget", url, "-O", filename], check=True)
 
-        print(f"Downloaded: {file_name}")
+        print(f"Downloaded: {filename}")
     except Exception as e:
         print(f"Failed to download {url}: {e}")
 
     # If it's the tar.gz file, extract it using the tarfile module
-    if file_name.endswith(".tar.gz"):
-        print(f"Extracting: {file_name}")
-        with tarfile.open(file_name, "r:gz") as tar:
+    if filename.endswith(".tar.gz"):
+        print(f"Extracting: {filename}")
+        with tarfile.open(filename, "r:gz") as tar:
             tar.extractall(path=download_dir)
             os.rename(
                 os.path.join(download_dir, "formula_images_processed"), os.path.join(download_dir, "formula_images")
             )
-        print(f"Extracted: {file_name}")
+        print(f"Extracted: {filename}")
 
 
 def download_data():

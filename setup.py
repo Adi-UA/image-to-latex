@@ -45,7 +45,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
     ],
-    packages=["api", "conf", "figures", "streamlit", "image_to_latex"],
+    packages=["api", "conf", "figures", "image_to_latex"],
     python_requires=">=3.6",
     install_requires=[required_packages],
     extras_require={
