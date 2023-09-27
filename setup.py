@@ -14,23 +14,15 @@ with open(Path(BASE_DIR, "requirements.txt")) as file:
     required_packages = [ln.strip() for ln in file.readlines()]
 
 
-dev_packages = [
-    "black==23.7.0",
-    "flake8==6.1.0",
-    "isort==5.12.0",
-    "mypy==1.5.1",
-    "pre-commit==3.3.3",
-]
-
 
 setup(
-    name="image-to-latex",
+    name="image-to-latex-adi",
     version="0.1",
     license="MIT",
     description="Convert images to latex code.",
-    author="King Yiu Suen",
-    author_email="kingyiusuen@gmail.com",
-    url="https://github.com/kingyiusuen/image-to-latex/",
+    author="King Yiu Suen (Updated by Adi)",
+    author_email="abanerjee@arizona.edu",
+    url="https://github.com/Adi-UA/image-to-latex",
     keywords=[
         "machine-learning",
         "deep-learning",
@@ -45,10 +37,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
     ],
-    packages=["api", "conf", "figures", "image_to_latex"],
-    python_requires=">=3.6",
+    packages=["conf", "figures", "image_to_latex"],
+    python_requires=">=3.10",
     install_requires=[required_packages],
-    extras_require={
-        "dev": dev_packages,
-    },
 )

@@ -15,8 +15,8 @@ urls = [
 ]
 
 # Directory to save the downloaded files (in the same directory as the script)
-script_dir = os.path.dirname(os.path.abspath(__file__))
-download_dir = os.path.join(script_dir, "data")
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+download_dir = os.path.join(project_dir, "data")
 
 # Create the directory if it doesn't exist
 os.makedirs(download_dir, exist_ok=True)

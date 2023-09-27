@@ -6,7 +6,7 @@ import image_to_latex.data.utils as utils
 from image_to_latex.data.utils import Tokenizer, get_all_formulas, get_split
 
 
-PROJECT_DIRNAME = Path(__file__).resolve().parents[1]
+PROJECT_DIRNAME = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIRNAME = PROJECT_DIRNAME / "data"
 RAW_IMAGES_DIRNAME = DATA_DIRNAME / "formula_images"
 PROCESSED_IMAGES_DIRNAME = DATA_DIRNAME / "formula_images_processed"
