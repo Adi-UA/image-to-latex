@@ -28,6 +28,7 @@ data:
   batch_size: 32
   num_workers: 16
   pin_memory: false
+  max_output_len: 200
 
 lit_model:
   # Optimizer
@@ -42,7 +43,7 @@ lit_model:
   nhead: 4
   dropout: 0.3
   num_decoder_layers: 3
-  max_output_len: 150
+  max_output_len: 200
 
 logger:
   project: "image-to-latex"
