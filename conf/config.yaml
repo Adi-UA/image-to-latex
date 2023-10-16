@@ -1,7 +1,7 @@
 seed: 1234
 
 trainer:
-  gpus: [2]
+  gpus: [0]
   overfit_batches: 0.0
   check_val_every_n_epoch: 2
   fast_dev_run: False
