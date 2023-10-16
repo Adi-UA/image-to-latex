@@ -16,6 +16,7 @@ CLEANED_FILE = "im2latex_formulas.norm.new.lst"
 
 
 def main():
+    """
     # Run adi_prepare_data.py to download and process the latex data
     subprocess.run(
         [
@@ -24,8 +25,9 @@ def main():
         ],
         check=True,
     )
+    """
     os.chdir(DATA_DIRNAME)
-
+    """
     # Extract regions of interest
     if not PROCESSED_IMAGES_DIRNAME.exists():
         PROCESSED_IMAGES_DIRNAME.mkdir(parents=True, exist_ok=True)
@@ -38,7 +40,7 @@ def main():
             if not cropped_image:
                 continue
             cropped_image.save(PROCESSED_IMAGES_DIRNAME / image_filename.name)
-
+    """
     # Build vocabulary
     print("Building vocabulary...")
     all_formulas = get_all_formulas(CLEANED_FILE)
