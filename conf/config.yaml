@@ -5,7 +5,7 @@ trainer:
   overfit_batches: 0.0
   check_val_every_n_epoch: 2
   fast_dev_run: False
-  max_epochs: 50
+  max_epochs: 100
   min_epochs: 1
   num_sanity_val_steps: 0
   auto_lr_find: False
