@@ -26,11 +26,13 @@ class Im2Latex(LightningDataModule):
         batch_size: int = 8,
         num_workers: int = 0,
         pin_memory: bool = False,
+        max_output_len: int = 150,
     ) -> None:
         super().__init__()
         self.batch_size = batch_size
         self.num_workers = num_workers
         self.pin_memory = pin_memory
+        self.max_output_len = max_output_len
 
         self.data_dirname = Path(__file__).resolve().parents[2] / "data"
         self.vocab_file = Path(__file__).resolve().parent / "vocab.json"
