@@ -97,8 +97,30 @@ class Im2Latex(LightningDataModule):
                 transform=self.transform["val/test"],
             )
 
+    # added by gauravs ==================>>>
+    def controlling_length(self, formulas):
+        max_len = self.max_output_len
+        pad_idx = 0   # taking from vocab.json
+        trimmed_formulas = []
+
+        for b in range(len(formulas)):
+            if len(formulas[b]) > max_len:
+                trimmed_formulas.append(formulas[b][:max_len])
+            else:
+                trimmed_formulas.append(formulas[b][:len(formulas[b])])
+
+        return trimmed_formulas
+    
     def collate_fn(self, batch):
         images, formulas = zip(*batch)
+
+        """
+        added by gauravs ===================>>
+        condition to take an equation of any length
+        trim it down to max length if it exceeds it
+        """
+        formulas = self.controlling_length(formulas)
+
         B = len(images)
         max_H = max(image.shape[1] for image in images)
         max_W = max(image.shape[2] for image in images)
