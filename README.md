@@ -30,7 +30,7 @@ cd image-to-latex
 Assuming you have Miniconda installed, run the following command to install the required packages:
 
 ```
-./install
+./scripts/install
 ```
 
 The install script will create and install the required packages in a virtual environment named `img2latex-env` that uses Python 3.10.
