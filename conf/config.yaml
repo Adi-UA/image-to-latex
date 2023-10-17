@@ -19,7 +19,7 @@ callbacks:
     monitor: "val/loss"
     filename: "{epoch}-{val/loss:.2f}-{val/cer:.2f}"
   early_stopping:
-    patience: 5
+    patience: 3
     mode: "min"
     monitor: "val/loss"
     min_delta: 0.001
