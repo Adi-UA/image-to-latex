@@ -115,7 +115,9 @@ if __name__ == "__main__":
     for i, chunk in enumerate(test_data_chunks):
         print(f"Processing chunk {i}...")
         arg_batches = [
-            (os.path.join(img_dir, f"{i}.png"), lit_model, transform) for i in chunk
+            (os.path.join(img_dir, f"{i}.png"), lit_model, transform)
+            for i in chunk
+            if i not in completed
         ]
         with multiprocessing.Pool(args.n) as pool:
             results = pool.starmap(

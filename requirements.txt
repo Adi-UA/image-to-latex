@@ -1,6 +1,6 @@
 pytorch-lightning==1.4.9
 torchmetrics==0.6.0
-torchvision==0.14.0
+torchvision==0.13.0
 torch==1.13.0
 wandb==0.15.9
 editdistance==0.6.2
