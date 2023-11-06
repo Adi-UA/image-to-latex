@@ -52,7 +52,7 @@ def load_completed_result_ids(dataset: str) -> Tuple[dict, set]:
         ids = {int(k) for k in results.keys()}
         return results, ids
     except FileNotFoundError:
-        return set()
+        return {}, set()
 
 
 def predict(
